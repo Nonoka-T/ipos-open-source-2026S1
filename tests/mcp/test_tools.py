@@ -2,7 +2,7 @@ from tests.mcp.conftest import parse_mcp_response
 
 
 def test_tools_list(mcp_client):
-    response = mcp_client.rpc("tools/list", {}, id=2)
+    response = mcp_client.rpc("tools/list", {}, rpc_id=2)
 
     assert response.status_code == 200  # noqa: PLR2004
     body = parse_mcp_response(response)
