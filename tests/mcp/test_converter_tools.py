@@ -64,3 +64,9 @@ def test_tool_definition_structure():
     tool = TOOL_DEFINITION[0]
     assert tool["name"] == "miles_to_kilometers"
     assert callable(tool["func"])
+
+
+def test_miles_to_kilometers_infinity_raises():
+    """Verify that infinite input raises an exception."""
+    with pytest.raises(Exception):
+        miles_to_kilometers_value(float("inf"))
